@@ -44,7 +44,10 @@ class TestHootel(object):
         logout_btn = self.browser.find_element(By.ID, 'logout-link')
 
         assert logout_btn.text == "Kilépés"
-
+    @allure.title("Hootel List")
+    @allure.description("szállások listázása")
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @allure.tag("login")
     def test_hotel_list(self):
         hotel_list_btn = self.browser.find_element(By.XPATH, '//button[@class="btn btn-outline-primary btn-block"]')
         hotel_list_btn.click()
